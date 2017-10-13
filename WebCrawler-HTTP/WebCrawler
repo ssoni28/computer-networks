@@ -1,0 +1,1 @@
+java -Xss512m -cp jsoup-1.8.3.jar:./ PersistentCrawl $1 $2

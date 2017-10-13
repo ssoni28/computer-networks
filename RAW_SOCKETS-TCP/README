@@ -1,0 +1,103 @@
+==========================================================================
+RAW SOCKETS IMPLEMENTATION
+==========================================================================
+
+GROUP MEMBERS:
+
+NAME : PREETHI AYYAMPERUMAL
+NUID : 001791108
+
+NAME : SWATI SONI
+NUID : 001610740
+
+==========================================================================
+USAGE:
+
+>./rawhttpget [URL]
+EXAMPLE:./rawhttpget http://www.ccs.neu.edu/home/cs5700/project4.html
+==========================================================================
+
+PURPOSE OF THE PROGRAM:
+It takes one command line parameter (a URL), downloads the associated 
+web page and saves it to the current directory using raw sockets
+
+HIGH LEVEL APPROACH:
+The program is developed with python. Socket library is used to identify the 
+IP Address of source and destination machines. It is also used to create, send 
+and receive via raw Sockets. 
+
+Timeout Functionality:
+To handle Acknowledgement delay and validate live communication, 
+settimeout functionality of socket library is used
+
+IP Implementation:
+IP header is constructed along with the checksum
+Incoming IP Packets are verified using their checksum
+Header is packed in network order using struct library of python
+
+TCP Implementation:
+Three Way Connection Handshake and Connection Teardown is implemented
+Random Port and Sequence numbers are used to avoid Connection Confusion 
+and Security Issues.Header and Data are packed in network order using 
+struct library of python.Pseudo Header is calculated for verifying 
+incoming TCP checksum.Incoming Packets are ordered and duplicates are
+handled using python’s OrderedDictinary 
+
+Html Parsing:
+The Ordered Data packets are parsed using HTTP Response packet and 
+content of the response is stored in the output file
+
+CHALLENGES FACED:
+Pseudo Header Calculation was the challenging task. Used the message format 
+to build the header for verifying incoming packets. Source IP identification 
+of host machine is done using creating a socket connection 
+
+TESTING:
+Tested using the FakeBook server and stress tested using large files of size 2Mb, 
+10Mb and 50MB. The output files are verified using md5sum utility of Linux
+
+=====================================================================================
+
+A
+A
+A
+A
+A
+A
+A
+A
+A
+A
+A
+A
+A
+A
+A
+A
+A
+A
+A
+A
+A
+A
+A
+A
+A
+A
+A
+A
+A
+A
+A
+A
+A
+A
+A
+A
+A
+A
+A
+A
+A
+A
+
